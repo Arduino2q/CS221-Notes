@@ -1,0 +1,64 @@
+First attempt at writing a contract for a sorting function:
+  sort(int anArray [], int num);
+  // Sorts an array.
+  // Precondition: anArray is an array of num integers; num > 0.
+  // Postcondition: The integers in anArray are sorted.
+  
+Second refinement at writing a contract for sorting function: 
+
+  void sort(/*inout*/ int anArray[], /*in */ const int num);
+  // Sorts anArray into ascending order.
+  // Precondition: anArray is an initiaized array of num integers;
+  // 1 <= num <= MAX_ARRAY, where 
+  // MAX_ARRAY is a global constant that specifies
+  // the maximum size of anArray.
+  // Postcondition: anArray [0] <= anArray [1] <= ...
+  // <= anArray[num-1], num is unchanged.
+  
+Modularity
+  - The modularity of software is measured by its cohesion, coupling, and completeness.
+  - The cohesion of a module is the degree to which the parts of the module are related.
+      - A highly cohesive module preforms one well-defined task
+      - High cohesion implies that it contains only methods and data that are related to its narrow purpose.
+  - The coupling of a set of modules is the degree to which the modules depend on each other.
+      - Modules with low coupling are almost independant of one another 
+      - Low coupled modules are
+        * Easier to change: A change to one module wont affect another
+        * Easier to understand
+      - Coupling cannot be and should not be eliminated entirely
+  - Classes should be easy to understand, and have as few methods as possible (idea of minimality). but 
+  should be complete - providing all methods tat are necessary.
+
+Documentation 
+  - Documentation is critical for all programs, because
+     - Other people have to read your program and understand it, including your supervisor or teacher or colleagues, or even a client.
+     - You may have to revise a program you did a year ago and without good documentation you will not remember what or how it works.
+     - Government and other agencies will require certain software to be properly documented. Software in various products requiring certifications needs proper documentation.
+  - What is proper documentation? 
+  It must include, at a minimum:
+      1. a preamble for every file, as described in the Programming Rules document.
+      2. pre-and post-conditions for all function prototypes including descriptions of each parameter
+      3. descriptions of how error conditions are handled,
+      4. a revision history for every file (list of dates of modifications, who made them, and what they fixed or changed),
+      5. data dictionary (descriptions of most variables) 
+      6. detailed descriptions of all complex algorithims.
+  - This is an example of a suitable preamble:
+  
+        /****************************************************************************************************************************************
+        Title        :      draw_stars.c
+        Author       :      Stewart Weiss
+        Created on   :      April 2, 2010
+        Description  :      Draws stars of any size in a window, by draging the mouse to define the bounding rectangle of 
+                           the star
+        Purpose      :      Reinforces drawing with the packing-pixmap method, in which the application maintains a seperate, 
+                           hidden pixmap that gets drawn to the drawable only in the expose-event handler. Introduces the rubberbanding technique.
+        Usage        :      draw_stars
+                           Press the left mouse button and drag to draw a 5-pointed star
+        Build with   :      gcc -o drawing_demo_03 draw_stars.c \
+                              'pkg-config --cflags --libs gtk+-2.0'
+        Modifications:
+                       
+****************************************************************************************************************************************************/
+
+Readability and Style
+
