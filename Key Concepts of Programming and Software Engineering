@@ -1,4 +1,5 @@
 First attempt at writing a contract for a sorting function:
+  
   sort(int anArray [], int num);
   // Sorts an array.
   // Precondition: anArray is an array of num integers; num > 0.
